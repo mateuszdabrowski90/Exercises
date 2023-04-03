@@ -2,3 +2,8 @@ string1 = "abra"
 string2 = "cadabra"
 magic_string = string1 + string2
 print(magic_string)
+
+first_name = "Mateusz"
+last_name = "Dabrowski"
+full_name = first_name + " " + last_name
+print(full_name)
