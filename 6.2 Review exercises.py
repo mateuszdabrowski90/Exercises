@@ -5,7 +5,7 @@ def convert_cel_to_far(C):
 
 c = float(input("Enter a temperature ic Celsius: "))
 fahrenheit = convert_cel_to_far(c)
-print(f"{fahrenheit:.2f}")
+print(f"{c} degrees C = {fahrenheit:.2f} degrees F")
 
 # 2
 def convert_far_to_cel(f):
@@ -13,4 +13,4 @@ def convert_far_to_cel(f):
     return c
 f = float(input("Enter a temperature in Fahrenheit: "))
 celsius = convert_far_to_cel(f)
-print(f"{celsius:.2f}")
+print(f"{f} degrees F = {celsius:.2f} degrees C")
