@@ -1,7 +1,5 @@
 import random
 
-head = 0
-tail = 0
 flip = 0
 position_s = random.randint(1, 2)
 for i in range(10000):
