@@ -12,5 +12,5 @@ def election():
         else:
             cand_b = cand_b + 1
 
-regions = 3
+
 
