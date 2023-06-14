@@ -9,23 +9,40 @@ universities = [
 ]
 
 def enrollment_stats(universities):
-    tot_students = 0
-    tot_tuition = 0
-    student_mean = 0
-    student_median = 0
-    tuition_mean = 0
-    tuition_median = 0
-    x = 0
+    student_enrollment = []
     for i in universities:
-        tot_students = tot_students + i[1]
-    print(f"Total students: {tot_students:,}")
+        student_enrollment.append(i[1])
+    tuition_fees = []
     for i in universities:
-        tot_tuition = tot_tuition + i[2]
-    print(f"Total tuition: $ {tot_tuition:,}")
-    print(f"Student mean: {tot_students / len(universities):,.2f}")
-    sorted_universities = sorted(universities)
-    print(sorted_universities)
+        tuition_fees.append(i[2])
+    return student_enrollment, tuition_fees
+def mean(a):
+    sum = 0
+    for i in a:
+        sum = sum + i
+    mean = sum / len(a)
+    return mean
+
+def median(b):
+    sorted_list = sorted(b)
+    sum = 0
+    length = len(b)
+    for i in b:
+        sum = sum + i
+    middle_index = length // 2
+    if length % 2 == 0:
+        median = (sorted_list[middle_index - 1] + sorted_list[middle_index] / 2)
+    else:
+        median = sorted_list[middle_index]
+    return median
+
+print(f"Total students: {sum(enrollment_stats(universities)[0]):,}")
+print(f"Total tuition: $ {sum(enrollment_stats(universities)[1]):,}")
+print( )
+print(f"Student mean: {mean(enrollment_stats(universities)[0]):,.2f}")
+print(f"Student median: {median(enrollment_stats(universities)[0]):,}")
+print()
+print(f"Tuition mean: $ {mean(enrollment_stats(universities)[1]):,.2f}")
+print(f"Tuition median: $ {median(enrollment_stats(universities)[1]):,}")
 
 
-
-enrollment_stats(universities)
