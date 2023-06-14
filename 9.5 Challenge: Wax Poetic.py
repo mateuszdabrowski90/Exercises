@@ -47,7 +47,7 @@ while num < 3:
         verb2 = random.choice(verbs)
 
     while verb3 == verb1 or verb3 == verb2:
-        noun3 = random.choice(verbs)
+        verb3 = random.choice(verbs)
 
     num += 1
 
