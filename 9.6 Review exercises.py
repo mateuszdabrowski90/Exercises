@@ -7,23 +7,25 @@ captains["Voyager"] = "Janeway"
 captains["Defiant"] = "Sisko"
 
 # 3
-if "Enterprise" in captains:
-    print("ok")
-else:
+if "Enterprise" not in captains:
     captains["Enterprise"] = "unknown"
 
-if "Discovery" in captains:
-    print("ok")
-else:
+if "Discovery" not in captains:
     captains["Discovery"] = "unknown"
 
 # 4
-for captain in captains:
-    print(f"The {captain} is captained by {captains[captain]}")
+for ship, captain in captains.items():
+    print(f"The {ship} is captained by {captain}")
 
 # 5
 del captains["Discovery"]
 
 print(captains)
 
-dict(captains)
+captains = dict(
+    [
+        ("Enterprise", "Picard"),
+        ("Voyager", "Janeway"),
+        ("Defiant", "Sisko"),
+    ]
+)
