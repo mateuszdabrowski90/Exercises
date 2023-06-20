@@ -21,14 +21,14 @@ def write():
         print(f'[A] [{board["A1"]}]  [{board["A2"]}]  [{board["A3"]}]')
         print(f'[B] [{board["B1"]}]  [{board["B2"]}]  [{board["B3"]}]')
         print(f'[C] [{board["C1"]}]  [{board["C2"]}]  [{board["C3"]}]')
-        choose_h = input("Enter a coordinate: ").upper()
-        if choose_h in chosen:
-            while choose_h in chosen:
+        choice_h = input("Enter a coordinate: ").upper()
+        if choice_h in chosen:
+            while choice_h in chosen:
                 print("wrong value. Enter again")
-                choose_h = input("Enter a coordinate: ").upper()
-            board[choose_h] = sign_h
-        else: board[choose_h] = sign_h
-        chosen.append(choose_h)
+                choice_h = input("Enter a coordinate: ").upper()
+            board[choice_h] = sign_h
+        else: board[choice_h] = sign_h
+        chosen.append(choice_h)
         if board["A1"] == sign_h and board["A2"] == sign_h and board["A3"] == sign_h:
             print("You won!")
             break
@@ -53,12 +53,12 @@ def write():
         elif board["A3"] == sign_h and board["B2"] == sign_h and board["C1"] == sign_h:
             print("You won!")
             break
-        choose_c = random.choice(list(board))
-        if choose_c in chosen:
-            while choose_c in chosen:
-                choose_c = random.choice(list(board))
-        board[choose_c] = sign_c
-        chosen.append(choose_c)
+        choice_c = random.choice(list(board))
+        if choice_c in chosen:
+            while choice_c in chosen:
+                choice_c = random.choice(list(board))
+        board[choice_c] = sign_c
+        chosen.append(choice_c)
         if board["A1"] == sign_c and board["A2"] == sign_c and board["A3"] == sign_c:
             print("You lost!")
             break
